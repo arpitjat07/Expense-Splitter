@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Splitter - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="app-title">Expense Splitter</h1>
+            <p class="app-description">
+                Easily split expenses with friends and family. Track who paid what, calculate fair shares, and settle up
+                with minimal transactions.
+            </p>
+            <button class="cta-button" id="new-trip-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                New Trip
+            </button>
+        </div>
+
+        <!-- Active Trips Section -->
+        <div class="trips-section">
+            <div class="section-header">
+                Active Trips
+                <span class="badge" id="active-count">0</span>
+            </div>
+            <div class="trips-grid" id="active-trips">
+                <!-- Active trips will be injected here -->
+                <div class="empty-state">
+                    <div class="empty-state-icon">🌍</div>
+                    <div class="empty-state-text">No active trips yet. Create one to get started!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completed Trips Section -->
+        <div class="trips-section">
+            <div class="section-header">
+                Completed Trips
+                <span class="badge" id="completed-count">0</span>
+            </div>
+            <div class="trips-grid" id="completed-trips">
+                <!-- Completed trips will be injected here -->
+                <div class="empty-state">
+                    <div class="empty-state-icon">✓</div>
+                    <div class="empty-state-text">No completed trips yet.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
